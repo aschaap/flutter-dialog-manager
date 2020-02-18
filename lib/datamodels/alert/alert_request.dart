@@ -5,13 +5,15 @@ class AlertRequest {
   final String description;
   final String buttonTitle;
   String buttonTitle1;
-  Widget content;
+  String text;
+  String text1;
 
   AlertRequest ({
     @required this.title,
     @required this.description,
     @required this.buttonTitle,
     this.buttonTitle1,
-    this.content,
+    this.text,
+    this.text1
   });
 }
