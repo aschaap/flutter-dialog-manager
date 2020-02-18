@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dialog_manager/datamodels/alert/alert_request.dart';
 import 'package:dialog_manager/datamodels/alert/alert_response.dart';
+import 'package:flutter/material.dart';
 
 class DialogService {
   Function(AlertRequest) _showDialogListener;
@@ -17,14 +18,16 @@ class DialogService {
     String title,
     String description,
     String buttonTitle = 'Ok', // default value in case none is passed
-    String buttonTitle1
+    String buttonTitle1,
+    Widget content
   }) {
     _dialogCompleter = Completer<AlertResponse>();
     var request = AlertRequest(
       title: title,
       description: description,
       buttonTitle: buttonTitle,
-      buttonTitle1: buttonTitle1
+      buttonTitle1: buttonTitle1,
+      content: content
     );
     _showDialogListener(request);
     return _dialogCompleter.future;

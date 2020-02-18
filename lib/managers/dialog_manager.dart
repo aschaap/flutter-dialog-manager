@@ -31,6 +31,7 @@ class _DialogManagerState extends State<DialogManager> {
             context: context,
             title: request.title,
             desc: request.description,
+            content: request.content,
             closeFunction: () =>
                 _dialogService.dialogComplete(AlertResponse(confirmed: false)),
             buttons: (request.buttonTitle1 != null)
